@@ -1,0 +1,1 @@
+A PHP project built with the MVC architecture, made from scratch without a framework
