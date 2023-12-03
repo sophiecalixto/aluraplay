@@ -1,0 +1,19 @@
+{
+  "name": "sophiecalixto/aluraplay",
+  "description": "A PHP project built with the MVC architecture, made from scratch without a framework",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "sophiecalixto",
+      "email": "sophiecalixto2004@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "SophieCalixto\\AluraPlay\\": ["", "database/"]
+    }
+  },
+  "require": {
+    "ext-pdo": "*"
+  }
+}
