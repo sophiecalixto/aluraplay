@@ -1,6 +1,5 @@
 <?php
 $videos = require('controller/GetAllVideosController.php');
-var_dump($videos);
 ?>
 
 <!DOCTYPE html>
