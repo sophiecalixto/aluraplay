@@ -8,18 +8,20 @@ use SophieCalixto\AluraPlay\database\PDOConnection;
 
 class Video
 {
+    private int $id;
     private string $url;
     private string $title;
     private static PDO $pdo;
 
-    public function __construct(string $title = '', string $url = '')
+    public function __construct(string $title = '', string $url = '', int $id = -1)
     {
         $this->title = $title;
         $this->url = $url;
+        $this->id = $id;
         self::$pdo = PDOConnection::PDOPSQL();
     }
 
-    public static function Add(string $url, string $title) : bool
+    public static function add(string $url, string $title) : bool
     {
         new self();
         try {
@@ -49,8 +51,20 @@ class Video
         $query = self::$pdo->query("SELECT * FROM video");
         $stmt = $query->fetchAll(PDO::FETCH_ASSOC);
         return array_map(function($video) {
-            return new self($video['title'], $video['url']);
+            return new self($video['title'], $video['url'], $video['id']);
         }, $stmt);
+    }
+
+    public static function delete(int $id) : bool
+    {
+        new self();
+        $video_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+        $query = self::$pdo->prepare("DELETE FROM video WHERE id = :id");
+        if($query->execute(["id" => $video_id])) {
+            return true;
+        }
+
+        return false;
     }
 
     public function title() : string
@@ -61,5 +75,10 @@ class Video
     public function url() : string
     {
         return $this->url;
+    }
+
+    public function id() : int
+    {
+        return $this->id;
     }
 }

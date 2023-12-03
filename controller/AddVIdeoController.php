@@ -6,7 +6,7 @@ use SophieCalixto\AluraPlay\model\Video;
 
 if ($_POST['title'] && $_POST['url']) {
     if (
-        Video::Add($_POST['url'], $_POST['title'])
+        Video::add($_POST['url'], $_POST['title'])
     ) {
         header('Location: /?success=1');
     } else {

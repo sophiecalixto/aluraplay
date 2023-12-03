@@ -45,7 +45,7 @@ $videos = require('controller/GetAllVideosController.php');
                 <h3><?= $video->title() ?></h3>
                 <div class="acoes-video">
                     <a href="./pages/enviar-video.html">Editar</a>
-                    <a href="./pages/enviar-video.html">Excluir</a>
+                    <a href="/controller/DeleteVideoController.php?id=<?= $video->id() ?>">Excluir</a>
                 </div>
             </div>
         </li>
