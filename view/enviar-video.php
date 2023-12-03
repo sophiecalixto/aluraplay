@@ -25,7 +25,7 @@
 
             <div class="cabecalho__icones">
                 <a href="enviar-video.php" class="cabecalho__videos"></a>
-                <a href="../pages/login.html" class="cabecalho__sair">Sair</a>
+                <a href="/login.html" class="cabecalho__sair">Sair</a>
             </div>
         </nav>
 
@@ -33,7 +33,7 @@
 
     <main class="container">
 
-        <form class="container__formulario" action="../controllers/AddVIdeoController.php" method="post">
+        <form class="container__formulario" action="../controller/AddVIdeoController.php" method="post">
             <h2 class="formulario__titulo">Envie um vídeo!</h2>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>

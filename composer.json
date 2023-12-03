@@ -10,7 +10,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "SophieCalixto\\AluraPlay\\": ["", "database/"]
+      "SophieCalixto\\AluraPlay\\": ["", "database/", "model/"]
     }
   },
   "require": {
