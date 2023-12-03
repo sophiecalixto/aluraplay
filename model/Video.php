@@ -67,6 +67,41 @@ class Video
         return false;
     }
 
+    public static function get(int $id) : self
+    {
+        new self();
+        $video_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+        $query = self::$pdo->query("SELECT * FROM video WHERE id = $video_id");
+        $stmt = $query->fetch(PDO::FETCH_ASSOC);
+        return new self($stmt['title'], $stmt['url'], $stmt['id']);
+    }
+
+    public static function update(int $id, string $title, string $url) : bool
+    {
+        new self();
+        try {
+            $video_url = filter_var($url, FILTER_VALIDATE_URL);
+            $video_id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
+
+            $stmt = self::$pdo->prepare("UPDATE video SET title = :title, url = :url WHERE id = :id");
+
+            if (
+                $stmt->execute([
+                    "title" => $title,
+                    "url" => $video_url,
+                    "id" => $video_id
+                ])
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+
+        } catch (PDOException $e) {
+            return false;
+        }
+    }
+
     public function title() : string
     {
         return $this->title;

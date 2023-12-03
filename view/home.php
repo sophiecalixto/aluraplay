@@ -44,7 +44,7 @@ $videos = require('controller/GetAllVideosController.php');
                 <img src="./img/logo.png" alt="logo canal alura">
                 <h3><?= $video->title() ?></h3>
                 <div class="acoes-video">
-                    <a href="./pages/enviar-video.html">Editar</a>
+                    <a href="/view/form.php?id=<?= $video->id() ?>">Editar</a>
                     <a href="/controller/DeleteVideoController.php?id=<?= $video->id() ?>">Excluir</a>
                 </div>
             </div>
