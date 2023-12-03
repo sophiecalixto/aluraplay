@@ -14,40 +14,16 @@ if ($id) {
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/estilos.css">
-    <link rel="stylesheet" href="../css/estilos-form.css">
-    <link rel="stylesheet" href="../css/flexbox.css">
-    <title>AluraPlay</title>
-    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-</head>
+<?php require_once 'inc/head.php' ?>
 
 <body>
 
 <!-- Cabecalho -->
-<header>
-
-    <nav class="cabecalho">
-        <a class="logo" href="../index.php"></a>
-
-        <div class="cabecalho__icones">
-            <a href="form.php" class="cabecalho__videos"></a>
-            <a href="/login.html" class="cabecalho__sair">Sair</a>
-        </div>
-    </nav>
-
-</header>
+<?php require_once 'inc/header.php' ?>
 
 <main class="container">
 
-    <form class="container__formulario"
-          action="<?= $id == null ? '../controller/AddVideoController.php' : '../controller/UpdateVideoController.php' ?>"
-          method="post">
+    <form class="container__formulario" method="post">
         <?php if ($id != null): ?>
             <input type="hidden" name="id" value="<?= $id ?>">
         <?php endif; ?>
