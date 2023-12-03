@@ -20,4 +20,4 @@ foreach ($routes as $route => $handler) {
     }
 }
 
-echo "Rota não encontrada";
+require_once(__DIR__ . '/../view/404.php');
