@@ -11,7 +11,7 @@ foreach ($routes as $route => $handler) {
     list($routeMethod, $routePath) = explode('|', $route);
 
     if ($method === $routeMethod && $pathInfo === $routePath) {
-        if (file_exists($handler)) {
+        if (file_exists(__DIR__ . $handler)) {
             require_once(__DIR__ . $handler);
         } else {
             require_once(__DIR__ . '/../view/home.php');
