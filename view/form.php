@@ -23,7 +23,7 @@ if ($id) {
 
 <main class="container">
 
-    <form class="container__formulario" method="post">
+    <form class="container__formulario" method="post" enctype="multipart/form-data">
         <?php if ($id != null): ?>
             <input type="hidden" name="id" value="<?= $id ?>">
         <?php endif; ?>
@@ -40,6 +40,13 @@ if ($id) {
             <input name="title" class="campo__escrita" required placeholder="Neste campo, dê o nome do vídeo"
                    value="<?= $id != null ? $video->title() : '' ?>"
                    id='titulo'/>
+        </div>
+
+
+        <div class="formulario__campo">
+            <label class="campo__etiqueta" for="image">Imagem do vídeo</label>
+            <input name="image" class="campo__escrita" type="file" accept="image/*"
+                   id='image'/>
         </div>
 
         <input class="formulario__botao" type="submit" value="Enviar"/>
