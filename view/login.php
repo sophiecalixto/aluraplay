@@ -2,6 +2,11 @@
 <html lang="pt-br">
 
 <?php require_once 'inc/head.php' ?>
+<style>
+    .cabecalho__icones {
+        display: none !important;
+    }
+</style>
 
 <body>
 

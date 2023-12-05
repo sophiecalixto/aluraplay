@@ -8,5 +8,6 @@ return [
     'POST|/editar-video' => "/../controller/UpdateVideoController.php",
     'GET|/remover-video' =>  "/../controller/DeleteVideoController.php",
     'GET|/login' => "/../view/login.php",
-    'POST|/login' => "/../controller/LoginController.php"
+    'POST|/login' => "/../controller/LoginController.php",
+    'GET|/logout' => "/../controller/LogoutController.php"
 ];
